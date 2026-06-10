@@ -1,21 +1,3 @@
-print("Welcome to my app!")
-print("By default This prints out a conversion")
-print("chart from centimeters to inches, but you")
-print("can also set a custom range if you want.")
-
-// jhbyuib
-for number in 1...100{
-    if number.isMultiple(of: 3) && number.isMultiple(of: 5){
-        print("FizzBuzz")
-    }
-    else if number.isMultiple(of: 3){
-        print("Fizz")
-    }
-    else if number.isMultiple(of: 5){
-        print("Buzz")
-    }
-    else{
-        print(number)
-    }
-}
-
+let celsiusTEMP:Double = 25.0
+let fahrenheitTEMP=(celsiusTEMP*9/5)+32
+print("\(celsiusTEMP)°C is equal to \(fahrenheitTEMP)°F")
