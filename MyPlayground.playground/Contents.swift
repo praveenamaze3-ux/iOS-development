@@ -83,3 +83,100 @@ print("---Students Grade Tracker---")
 for (index,Student) in sortedOrder.enumerated(){
     print("Rank \(index+1): \(Student.key) - \(Student.value)%")
 }
+
+//6.Structures : --------------------------------------
+struct Employee {
+    let name: String
+    var vacationRemaining: Int
+    
+    mutating func takevacation(days:Int){
+        if vacationRemaining > days{
+            vacationRemaining -= days
+            print("In vacation")
+            print("vacation left is \(vacationRemaining) days")
+        }else{
+            print("There isn't enough days")
+        }
+    }
+}
+var taylor=Employee.init(name:"Taylor Swift",vacationRemaining: 9)
+taylor.takevacation(days: 5)
+print(taylor.vacationRemaining)
+    
+//7.Classes : --------------------------------
+
+class animals {
+    var legs: Int
+    
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+class Dog: animals {
+    init(){
+        super.init(legs: 4)
+    }
+    func speak(){
+        print("Bow Bow")
+    }
+}
+
+class Corgi: Dog {
+    override func speak() {
+        print("Corgi's Bowwww Bowwww")
+    }
+}
+
+class poodle: Dog {
+    override func speak() {
+        print("Poodle's BOWWWWW BOWWWWW")
+    }
+}
+
+class Cat: animals {
+    var isTame: Bool
+    
+    init(isTame: Bool) {
+        self.isTame = isTame
+        super.init(legs: 4)
+    }
+    func speak(){
+        print("Meow")
+    }
+}
+class Persion: Cat{
+    init(){
+        super.init(isTame: true)
+    }
+    
+    override func speak() {
+        print("Persion Meow")
+    }
+}
+
+class Lion: Cat{
+    init(){
+        super.init(isTame: false)
+    }
+    
+    override func speak(){
+        print("A lion Roar!!")
+    }
+}
+print("\n")
+let dog = Dog()
+dog.speak()
+
+let corgi = Corgi()
+corgi.speak()
+
+let Toypoodle=poodle()
+Toypoodle.speak()
+
+let cat = Cat(isTame: true)
+cat.speak()
+
+let PersionCat = Persion()
+PersionCat.speak()
+print("Is the PersionCat Tame : \(PersionCat.isTame)")
